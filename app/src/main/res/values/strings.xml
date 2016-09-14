@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">XFood</string>
+
+    <string name="nenhum_item">Nenhum ítem para exibir!</string>
+
+    <!-- Opções Menu Toolbar -->
+    <string name="menu_configuracoes">Configurações</string>
+    <string name="menu_sobre">Sobre</string>
+    <string name="menu_sair">Sair</string>
+
+    <!-- Titulo das Tabs -->
+    <string name="tab_favoritos">Favoritos</string>
+    <string name="tab_resumo">Resumo</string>
+
+    <!-- Opções do NavDrawer Menu -->
+    <string name="nav_porcoes">Porções</string>
+    <string name="nav_refeicoes">Refeições</string>
+    <string name="nav_pizzas">Pizzas</string>
+    <string name="nav_lanches">Lanches</string>
+    <string name="nav_alcoolicas">Bebidas Alcoólicas</string>
+    <string name="nav_refrigerantes">Refrigerantes</string>
+    <string name="nav_sucos">Sucos</string>
+</resources>

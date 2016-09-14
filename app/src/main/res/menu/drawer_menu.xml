@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_porcoes"
+            android:icon="@drawable/porcoes"
+            android:title="@string/nav_porcoes"/>
+        <item
+            android:id="@+id/menu_refeicoes"
+            android:icon="@drawable/refeicoes"
+            android:title="@string/nav_refeicoes"/>
+        <item
+            android:id="@+id/menu_pizzas"
+            android:icon="@drawable/pizzas"
+            android:title="@string/nav_pizzas"/>
+        <item
+            android:id="@+id/menu_lanches"
+            android:icon="@drawable/lanches"
+            android:title="@string/nav_lanches"/>
+        <item
+            android:id="@+id/menu_alcoolicas"
+            android:icon="@drawable/alcoolicas"
+            android:title="@string/nav_alcoolicas"/>
+        <item
+            android:id="@+id/menu_refrigerantes"
+            android:icon="@drawable/refrigerantes"
+            android:title="@string/nav_refrigerantes"/>
+        <item
+            android:id="@+id/menu_sucos"
+            android:icon="@drawable/sucos"
+            android:title="@string/nav_sucos"/>
+    </group>
+</menu>
