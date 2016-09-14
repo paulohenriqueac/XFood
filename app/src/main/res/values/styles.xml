@@ -1,5 +1,5 @@
 <resources>
-    <style name="BaseAppTheme"  parent="Theme.AppCompat.NoActionBar">
+    <style name="BaseAppTheme"  parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -8,7 +8,8 @@
         <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
-    <style name="ToolBarStyle">
+    <style name="ToolBarStyle" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:actionMenuTextColor">@color/white</item>
         <item name="android:itemBackground">@color/white</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
