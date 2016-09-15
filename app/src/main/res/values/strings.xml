@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">XFood</string>
 
-    <string name="nenhum_item">Nenhum ítem para exibir!</string>
+    <string name="nenhum_item">Nenhum ítem para exibir.</string>
 
     <!-- Opções Menu Toolbar -->
     <string name="menu_configuracoes">Configurações</string>
