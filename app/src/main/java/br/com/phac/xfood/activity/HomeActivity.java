@@ -2,6 +2,7 @@ package br.com.phac.xfood.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
@@ -15,6 +16,15 @@ import br.com.phac.xfood.R;
 import br.com.phac.xfood.adapter.TabsAdapter;
 
 public class HomeActivity extends BaseActivity {
+    private static final String TIPO_LISTA          = "tipo_lista";
+
+    private static final String LISTA_PORCOES       = "lista_porções";
+    private static final String LISTA_REFEICOES     = "lista_refeicoes";
+    private static final String LISTA_PIZZAS        = "lista_pizzas";
+    private static final String LISTA_LANCHES       = "lista_lanches";
+    private static final String LISTA_ALCOOLICAS    = "lista_alcoolicas";
+    private static final String LISTA_REFRIGERANTES = "lista_refrigerantes";
+    private static final String LISTA_SUCOS         = "lista_sucos";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,27 +82,36 @@ public class HomeActivity extends BaseActivity {
     }
 
     private void selecionarOpcaoMenu(MenuItem menuItem) {
-        //Fecha o menu
-        drawerLayout.closeDrawers();
 
-        //Chama a Activity correspondente a opção selecionada no menu
+        // Intent para chamada da tela de lista de produtos
+        Intent intent = new Intent(this, ListaProdutosActivity.class);
+
+        //Prepara a intent com a opção selecionada no menu
         switch (menuItem.getItemId()){
             case R.id.menu_porcoes:
-                Intent intent = new Intent(this, ListaProdutosActivity.class);
-                startActivity(intent);
+                intent.putExtra(TIPO_LISTA, LISTA_PORCOES);
                 break;
             case R.id.menu_refeicoes:
+                intent.putExtra(TIPO_LISTA, LISTA_REFEICOES);
                 break;
             case R.id.menu_pizzas:
+                intent.putExtra(TIPO_LISTA, LISTA_PIZZAS);
                 break;
             case R.id.menu_lanches:
+                intent.putExtra(TIPO_LISTA, LISTA_LANCHES);
                 break;
             case R.id.menu_alcoolicas:
+                intent.putExtra(TIPO_LISTA, LISTA_ALCOOLICAS);
                 break;
             case R.id.menu_refrigerantes:
+                intent.putExtra(TIPO_LISTA, LISTA_REFRIGERANTES);
                 break;
             case R.id.menu_sucos:
+                intent.putExtra(TIPO_LISTA, LISTA_SUCOS);
+                break;
         }
+
+        startActivity(intent);
     }
 
     public void setupViewPager(){
@@ -104,6 +123,4 @@ public class HomeActivity extends BaseActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(viewPager);
     }
-
-
 }
