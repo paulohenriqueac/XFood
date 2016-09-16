@@ -1,14 +1,12 @@
 package br.com.phac.xfood.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
 
 import br.com.phac.xfood.R;
 import br.com.phac.xfood.fragment.ListaProdutosFragment;
 
 public class ListaProdutosActivity extends BaseActivity {
-
+    private static final String TIPO_LISTA = "tipo_lista";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,8 +15,10 @@ public class ListaProdutosActivity extends BaseActivity {
 
         setUpToolbar();
 
+        String tipolista = getIntent().getStringExtra(TIPO_LISTA);
+
         if (savedInstanceState == null){
-            ListaProdutosFragment listaProdutosFragment = ListaProdutosFragment.novaInstancia();
+            ListaProdutosFragment listaProdutosFragment = ListaProdutosFragment.novaInstancia(tipolista);
             getSupportFragmentManager()
                     .beginTransaction()
                     .add(R.id.contentPanel, listaProdutosFragment, "listaProdutos")

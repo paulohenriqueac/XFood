@@ -2,7 +2,6 @@ package br.com.phac.xfood.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
@@ -16,9 +15,13 @@ import br.com.phac.xfood.R;
 import br.com.phac.xfood.adapter.TabsAdapter;
 
 public class HomeActivity extends BaseActivity {
-    private static final String TIPO_LISTA          = "tipo_lista";
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+    private static Boolean flagOpenDrawer = false;
 
-    private static final String LISTA_PORCOES       = "lista_porções";
+    public final String TIPO_LISTA                  = "tipo_lista";
+
+    private static final String LISTA_PORCOES       = "lista_porcoes";
     private static final String LISTA_REFEICOES     = "lista_refeicoes";
     private static final String LISTA_PIZZAS        = "lista_pizzas";
     private static final String LISTA_LANCHES       = "lista_lanches";
@@ -39,6 +42,7 @@ public class HomeActivity extends BaseActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+
         return true;
     }
 
@@ -46,9 +50,11 @@ public class HomeActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem menuItem){
         switch (menuItem.getItemId()) {
             case android.R.id.home:
+                flagOpenDrawer = true;
                 drawerLayout.openDrawer(GravityCompat.START);
                 break;
             case R.id.menu_sair:
+                flagOpenDrawer = false;
                 startActivity(new Intent(getBaseContext(), LoginActivity.class));
                 finish();
                 break;
@@ -56,6 +62,16 @@ public class HomeActivity extends BaseActivity {
 
         return true;
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (flagOpenDrawer) {
+            drawerLayout.openDrawer(GravityCompat.START);
+        }
+    }
+
 
     //Configurar o Navigation Drawer
     protected void setupNavDrawer(){
