@@ -17,9 +17,9 @@ public class ProdutosService {
 
             prod.setId(i);
             prod.setNomeProduto(tipo + i);
+            prod.setValorProduto(i);
             prod.setImagemProduto("teste");
             prod.setDescricaoProduto("Aqui fica a descrição do produto");
-            prod.setValorProduto(i);
 
             produtos.add(prod);
         }

@@ -20,12 +20,35 @@
         android:orientation="vertical"
         android:padding="@dimen/card_view_padding">
 
-        <TextView
-            android:id="@+id/nomeProduto"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/card_view_margin"/>
-        
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/card_view_margin">
+
+            <TextView
+                android:id="@+id/nomeProduto"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="R$"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/valorProduto"
+                android:layout_width="@dimen/valor_width"
+                android:layout_height="wrap_content"
+                android:text="000,00"
+                android:textStyle="bold"
+                android:textAlignment="viewEnd"/>
+
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

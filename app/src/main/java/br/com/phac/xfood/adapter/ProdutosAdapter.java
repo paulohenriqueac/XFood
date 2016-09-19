@@ -42,6 +42,7 @@ public class ProdutosAdapter extends RecyclerView.Adapter<ProdutosAdapter.Produt
         Produto prod = this.produtos.get(position);
 
         holder.nomeProd.setText(prod.getNomeProduto());
+        holder.valorProd.setText(" " + prod.getValorProduto());
         Picasso.with(this.context).load(prod.getImagemProduto()).error(R.drawable.plate).fit().into(holder.imagemProd, null);
         holder.descricaoProd.setText(prod.getDescricaoProduto());
 
@@ -60,17 +61,19 @@ public class ProdutosAdapter extends RecyclerView.Adapter<ProdutosAdapter.Produt
 
     public static class ProdutosViewHolder extends RecyclerView.ViewHolder{
         TextView    nomeProd;
+        TextView    valorProd;
         ImageView   imagemProd;
         TextView    descricaoProd;
         CardView    cardView;
 
         public ProdutosViewHolder(View view){
             super(view);
-            nomeProd      = (TextView) view.findViewById(R.id.nomeProduto);
-            imagemProd    = (ImageView) view.findViewById(R.id.imagemProduto);
-            descricaoProd = (TextView) view.findViewById(R.id.descricaoProduto);
-            cardView      = (CardView) view.findViewById(R.id.card_view);
 
+            nomeProd      = (TextView)  view.findViewById(R.id.nomeProduto);
+            valorProd     = (TextView)  view.findViewById(R.id.valorProduto);
+            imagemProd    = (ImageView) view.findViewById(R.id.imagemProduto);
+            descricaoProd = (TextView)  view.findViewById(R.id.descricaoProduto);
+            cardView      = (CardView)  view.findViewById(R.id.card_view);
         }
     }
 

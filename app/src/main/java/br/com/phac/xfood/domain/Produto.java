@@ -4,9 +4,9 @@ package br.com.phac.xfood.domain;
 public class Produto {
     public int id;
     public String nomeProduto;
+    public double valorProduto;
     public String imagemProduto;
     public String descricaoProduto;
-    public double valorProduto;
 
     public long getId() {
         return id;
@@ -24,6 +24,14 @@ public class Produto {
         this.nomeProduto = nomeProduto;
     }
 
+    public double getValorProduto() {
+        return valorProduto;
+    }
+
+    public void setValorProduto(double valorProduto) {
+        this.valorProduto = valorProduto;
+    }
+
     public String getImagemProduto() {
         return imagemProduto;
     }
@@ -38,13 +46,5 @@ public class Produto {
 
     public void setDescricaoProduto(String descricaoProduto) {
         this.descricaoProduto = descricaoProduto;
-    }
-
-    public double getValorProduto() {
-        return valorProduto;
-    }
-
-    public void setValorProduto(double valorProduto) {
-        this.valorProduto = valorProduto;
     }
 }
