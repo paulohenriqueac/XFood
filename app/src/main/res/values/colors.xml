@@ -4,6 +4,8 @@
     <color name="colorPrimaryDark">#263238</color>
     <color name="colorAccent">#FF5722</color>
 
+    <color name="colorBackground">#E0E0E0</color>
+
     <color name="tabTextColor">#FFFFFF</color>
 
     <color name="white">#FFFFFF</color>
