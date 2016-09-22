@@ -31,7 +31,7 @@ public class ProdutosFragment extends Fragment {
     public static final String RESULT_QTDE = "result_qtde";
 
     private final Fragment thisFrag = this;
-    private final int index = 0;
+    private static int index;
 
     private RecyclerView recyclerView;
     private List<Produto> produtos;
@@ -113,6 +113,8 @@ public class ProdutosFragment extends Fragment {
 
             @Override
             public void onClickProduto(View view, int index) {
+                ProdutosFragment.index = index;
+
                 DialogQuant dialogQuant = new DialogQuant();
 
                 dialogQuant.setTargetFragment(thisFrag, 1);
@@ -125,11 +127,12 @@ public class ProdutosFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        Produto produto = produtos.get(index);
         String qtde = data.getExtras().getString(RESULT_QTDE);
 
-        Toast.makeText(getContext(), "Quantidade: " + qtde, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), qtde + "x " + produto.getNomeProduto().toUpperCase() + " ADICIONADO!", Toast.LENGTH_SHORT).show();
 
-        Produto produto = produtos.get(index);
+
 
     }
 }
