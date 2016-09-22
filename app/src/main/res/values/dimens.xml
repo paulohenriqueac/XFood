@@ -11,6 +11,8 @@
     <dimen name="card_view_elevation">6dp</dimen>
     <dimen name="card_view_radius">2dp</dimen>
 
+    <dimen name="btn_dialog_width">120dp</dimen>
+    <dimen name="txtView_dialog_margin">5dp</dimen>
     <dimen name="valor_width">51dp</dimen>
     <dimen name="total">25sp</dimen>
 </resources>

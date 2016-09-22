@@ -41,7 +41,7 @@ public class ProdutosAdapter extends RecyclerView.Adapter<ProdutosAdapter.Produt
     public void onBindViewHolder(final ProdutosViewHolder holder, final int position) {
         Produto prod = this.produtos.get(position);
 
-        holder.nomeProd.setText(prod.getNomeProduto());
+        holder.nomeProd.setText(prod.getNomeProduto().toUpperCase());
 
         DecimalFormat f = new DecimalFormat("##0.00");
         holder.valorProd.setText(f.format(prod.getValorProduto()));

@@ -26,4 +26,11 @@
     <string name="nenhum_item">Nenhum ítem para exibir.</string>
     <string name="carregando">Carregando...</string>
     <string name="total">Total: </string>
+
+    <!-- Dialog Quantidade -->
+    <string name="quantidade">Selecione a quantidade:</string>
+    <string name="menos">-</string>
+    <string name="mais">+</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="confirmar">Confirmar</string>
 </resources>

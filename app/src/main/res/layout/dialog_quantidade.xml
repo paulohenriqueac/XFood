@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"    
+    android:orientation="vertical"
+    android:padding="@dimen/default_padding"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/default_padding">
+        <Button
+            android:id="@+id/buttonMenos"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="@string/menos"/>
+        <TextView
+            android:id="@+id/textViewQtde"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/txtView_dialog_margin"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:layout_marginRight="@dimen/default_margin"
+            android:textStyle="bold"
+            android:textSize="33sp"
+            android:text="01"/>
+        <Button
+            android:id="@+id/buttonMais"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="@string/mais"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/buttonCancelar"
+            android:layout_width="@dimen/btn_dialog_width"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/default_margin"
+            android:text="@string/cancelar"/>
+
+        <Button
+            android:id="@+id/buttonConfirmar"
+            android:layout_width="@dimen/btn_dialog_width"
+            android:layout_height="wrap_content"
+            android:text="@string/confirmar"/>
+    </LinearLayout>
+    
+</LinearLayout>

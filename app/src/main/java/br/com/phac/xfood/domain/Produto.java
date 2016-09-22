@@ -2,13 +2,11 @@ package br.com.phac.xfood.domain;
 
 @org.parceler.Parcel
 public class Produto {
-    private int id;
-    private String nomeProduto;
-    private double valorProduto;
-    private String imagemProduto;
-    private String descricaoProduto;
-
-    private boolean select;
+    public int id;
+    public String nomeProduto;
+    public double valorProduto;
+    public String imagemProduto;
+    public String descricaoProduto;
 
     public long getId() {
         return id;

@@ -1,6 +1,8 @@
 package br.com.phac.xfood.fragment;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -17,16 +19,22 @@ import java.util.List;
 
 import br.com.phac.xfood.R;
 import br.com.phac.xfood.adapter.ProdutosAdapter;
+import br.com.phac.xfood.dialog.DialogQuant;
 import br.com.phac.xfood.domain.Produto;
 import br.com.phac.xfood.service.ProdutosService;
 
 public class ProdutosFragment extends Fragment {
-    private static final String TIPO_LISTA = "tipo_lista";
     private String tipo;
+
+    private static final String TIPO_LISTA = "tipo_lista";
+    private static final String DIALOG_QTDE = "dialog_qtde";
+    public static final String RESULT_QTDE = "result_qtde";
+
+    private final Fragment thisFrag = this;
+    private final int index = 0;
 
     private RecyclerView recyclerView;
     private List<Produto> produtos;
-
     private ProgressDialog progressDialog;
 
     public ProdutosFragment() {
@@ -102,11 +110,26 @@ public class ProdutosFragment extends Fragment {
 
     private ProdutosAdapter.ProdutoOnClickListener onClickProduto(){
         return new ProdutosAdapter.ProdutoOnClickListener() {
+
             @Override
             public void onClickProduto(View view, int index) {
-                Produto produto = produtos.get(index);
-                Toast.makeText(getContext(), "Produto " + produto.getNomeProduto() + " adicionado!", Toast.LENGTH_SHORT).show();
+                DialogQuant dialogQuant = new DialogQuant();
+
+                dialogQuant.setTargetFragment(thisFrag, 1);
+                dialogQuant.show(getFragmentManager().beginTransaction(), DIALOG_QTDE);
             }
         };
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        String qtde = data.getExtras().getString(RESULT_QTDE);
+
+        Toast.makeText(getContext(), "Quantidade: " + qtde, Toast.LENGTH_SHORT).show();
+
+        Produto produto = produtos.get(index);
+
     }
 }
