@@ -100,7 +100,7 @@ public class HomeActivity extends BaseActivity {
     private void selecionarOpcaoMenu(MenuItem menuItem) {
 
         // Intent para chamada da tela de lista de produtos
-        Intent intent = new Intent(this, ListaProdutosActivity.class);
+        Intent intent = new Intent(this, ProdutosActivity.class);
 
         //Prepara a intent com a opção selecionada no menu
         switch (menuItem.getItemId()){

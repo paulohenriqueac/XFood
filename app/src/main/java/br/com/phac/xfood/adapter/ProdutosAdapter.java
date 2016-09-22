@@ -7,11 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 import br.com.phac.xfood.R;
@@ -42,7 +42,10 @@ public class ProdutosAdapter extends RecyclerView.Adapter<ProdutosAdapter.Produt
         Produto prod = this.produtos.get(position);
 
         holder.nomeProd.setText(prod.getNomeProduto());
-        holder.valorProd.setText(" " + prod.getValorProduto());
+
+        DecimalFormat f = new DecimalFormat("##0.00");
+        holder.valorProd.setText(f.format(prod.getValorProduto()));
+
         Picasso.with(this.context).load(prod.getImagemProduto()).error(R.drawable.plate).fit().into(holder.imagemProd, null);
         holder.descricaoProd.setText(prod.getDescricaoProduto());
 
@@ -60,20 +63,20 @@ public class ProdutosAdapter extends RecyclerView.Adapter<ProdutosAdapter.Produt
     }
 
     public static class ProdutosViewHolder extends RecyclerView.ViewHolder{
-        TextView    nomeProd;
-        TextView    valorProd;
-        ImageView   imagemProd;
-        TextView    descricaoProd;
-        CardView    cardView;
+        TextView nomeProd;
+        TextView valorProd;
+        ImageView imagemProd;
+        TextView descricaoProd;
+        CardView cardView;
 
         public ProdutosViewHolder(View view){
             super(view);
 
-            nomeProd      = (TextView)  view.findViewById(R.id.nomeProduto);
-            valorProd     = (TextView)  view.findViewById(R.id.valorProduto);
-            imagemProd    = (ImageView) view.findViewById(R.id.imagemProduto);
-            descricaoProd = (TextView)  view.findViewById(R.id.descricaoProduto);
-            cardView      = (CardView)  view.findViewById(R.id.card_view);
+            nomeProd = (TextView) view.findViewById(R.id.nomeProduto);
+            valorProd = (TextView) view.findViewById(R.id.valorProduto);
+            imagemProd = (ImageView) view.findViewById(R.id.imagemProduto);
+            descricaoProd = (TextView) view.findViewById(R.id.descricaoProduto);
+            cardView = (CardView) view.findViewById(R.id.cardViewProduto);
         }
     }
 

@@ -11,7 +11,6 @@ public class ProdutosService {
     public static List<Produto> getProdutos(String tipo){
         List<Produto> produtos = new ArrayList<Produto>();
 
-
         for(int i = 0; i < 20; i ++){
             Produto prod = new Produto();
 
