@@ -16,7 +16,7 @@ import java.text.DecimalFormat;
 import br.com.phac.xfood.R;
 import br.com.phac.xfood.fragment.ProdutosFragment;
 
-public class DialogQuant extends DialogFragment {
+public class QuantidadeDialog extends DialogFragment {
     TextView textViewQtde;
 
     @Override
@@ -57,13 +57,15 @@ public class DialogQuant extends DialogFragment {
             public void onClick(View v) {
                 int qtde = Integer.parseInt(textViewQtde.getText().toString());
 
-                String valor = String.valueOf(qtde + 1);
-                qtde = Integer.valueOf(valor);
+                if (qtde != 99) {
+                    String valor = String.valueOf(qtde + 1);
+                    qtde = Integer.valueOf(valor);
 
-                DecimalFormat f = new DecimalFormat("00");
-                String format = f.format(qtde);
+                    DecimalFormat f = new DecimalFormat("00");
+                    String format = f.format(qtde);
 
-                textViewQtde.setText(format);
+                    textViewQtde.setText(format);
+                }
             }
         });
 

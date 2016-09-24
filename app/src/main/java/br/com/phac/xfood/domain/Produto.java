@@ -1,12 +1,12 @@
 package br.com.phac.xfood.domain;
 
-@org.parceler.Parcel
 public class Produto {
-    public int id;
-    public String nomeProduto;
-    public double valorProduto;
-    public String imagemProduto;
-    public String descricaoProduto;
+    private int id;
+    private String nomeProduto;
+    private double valorProduto;
+    private String imagemProduto;
+    private String descricaoProduto;
+    public int quantidade;
 
     public long getId() {
         return id;
@@ -46,5 +46,13 @@ public class Produto {
 
     public void setDescricaoProduto(String descricaoProduto) {
         this.descricaoProduto = descricaoProduto;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 }

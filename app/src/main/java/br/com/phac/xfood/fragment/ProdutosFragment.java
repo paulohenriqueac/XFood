@@ -1,6 +1,5 @@
 package br.com.phac.xfood.fragment;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -19,7 +18,7 @@ import java.util.List;
 
 import br.com.phac.xfood.R;
 import br.com.phac.xfood.adapter.ProdutosAdapter;
-import br.com.phac.xfood.dialog.DialogQuant;
+import br.com.phac.xfood.dialog.QuantidadeDialog;
 import br.com.phac.xfood.domain.Produto;
 import br.com.phac.xfood.service.ProdutosService;
 
@@ -115,10 +114,10 @@ public class ProdutosFragment extends Fragment {
             public void onClickProduto(View view, int index) {
                 ProdutosFragment.index = index;
 
-                DialogQuant dialogQuant = new DialogQuant();
+                QuantidadeDialog quantidadeDialog = new QuantidadeDialog();
 
-                dialogQuant.setTargetFragment(thisFrag, 1);
-                dialogQuant.show(getFragmentManager().beginTransaction(), DIALOG_QTDE);
+                quantidadeDialog.setTargetFragment(thisFrag, 1);
+                quantidadeDialog.show(getFragmentManager().beginTransaction(), DIALOG_QTDE);
             }
         };
     }
@@ -128,11 +127,10 @@ public class ProdutosFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
 
         Produto produto = produtos.get(index);
+
         String qtde = data.getExtras().getString(RESULT_QTDE);
+        produto.setQuantidade(Integer.parseInt(qtde));
 
-        Toast.makeText(getContext(), qtde + "x " + produto.getNomeProduto().toUpperCase() + " ADICIONADO!", Toast.LENGTH_SHORT).show();
-
-
-
+        Toast.makeText(getContext(), qtde + "x " + produto.getNomeProduto() + " adicionado!", Toast.LENGTH_SHORT).show();
     }
 }
